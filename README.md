@@ -3,7 +3,8 @@ Class that creates a REST API with routes mapped to all tables in a MySQL databa
 
 ### Installation
 ```ssh
-
+composer require gholme4/qbuild
+composer install
  ```
 
 ##### Closing
