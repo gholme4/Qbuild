@@ -1,5 +1,5 @@
 {
-    "name": "gholme4/Qbuild",
+    "name": "gholme4/qbuild",
     "description": "Class that creates a REST API with routes mapped to all tables in a MySQL database. Designed to be used with Qbuild.js client side.",
     "license": "MIT",
     "keywords": ["slim", "orm", "query", "builder", "sql", "mysql", "rest", "api"],
