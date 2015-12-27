@@ -1,0 +1,21 @@
+{
+    "name": "gholme4/Qbuild",
+    "description": "Class that creates a REST API with routes mapped to all tables in a MySQL database. Designed to be used with Qbuild.js client side.",
+    "license": "MIT",
+    "keywords": ["slim", "orm", "query", "builder", "sql", "mysql", "rest", "api"],
+    "authors": [
+        {
+            "name": "George Holmes II",
+            "email": "george@georgeholmesii.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.0.*"
+    },
+    "autoload": {
+         "classmap": ["Qbuild.php"]
+    }
+}
