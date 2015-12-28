@@ -16,59 +16,17 @@ class Qbuild {
 	public $app;
 
 	/**
-	* @param string $apiKey
-	*/
-	protected $apiKey;
-
-	/**
-	* @param bool $apiKey
-	*/
-	protected $apiKeyRequired = false;
-
-	/**
      * Constructor
      *
-     * @param array $config Associative array of configuration options
      * @return null
      */
-	function __construct ($config) {
-
-		$this->apiKey = $config['apiKey'];
-		$this->apiKeyRequired = $config['apiKeyRequired'];
+	function __construct () {
 
 		$this->app = new \Slim\App();
-
-		return;
-
-		if ($this->apiKeyRequired == true)
-		{
-			$this->checkApiKey();
-		}
-	}
-
-	/**
-	* Add middleware to authenticate requests with API key
-	*/
-	protected function checkApiKey () {
-		// API key check middleware
-		$this->app->add(function ($request, $response, $next) use ($api_key) {
-		    
-		    // If API is invalid, send error message in response
-		    if ($request->getHeader("x-qbuild-api-key")[0] != $this->apiKey)
-		    {   
-		        $newResponse = $response;
-		        $newResponse->withStatus(403);
-		        $newResponse->write(json_encode(array("error" => "Invalid API key")));
-		        return $newResponse;
-		    }
-
-		    $response = $next($request, $response);
-
-		    return $response;
-		});
 	}
 
 	public function run () {
+		
 		$this->findRowsRoute();
 		$this->insertRowRoute();
 		$this->updateRowRoute();
